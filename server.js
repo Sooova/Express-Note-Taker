@@ -4,13 +4,12 @@ const fs = require('fs');
 
 const { v4: uuidv4 } = require('uuid');
 
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.static('public'));
 
 // const api_routes = require('./routes/api_routes')
